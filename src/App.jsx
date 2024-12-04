@@ -1,8 +1,19 @@
 import "./App.css";
 import ContactComponent from "./components/ContactComponent/ContactComponent";
+import AddContactModal from "./components/AddContactModal/AddContactModal";
 import SearchComponent from "./components/SearchComponent/SearchComponent";
+import { useState } from "react";
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "10px" }}>
@@ -23,9 +34,13 @@ function App() {
             border: "none",
             cursor: "pointer",
           }}
+          onClick={handleOpenModal}
         >
           +
         </button>
+        {isModalOpen && (
+          <AddContactModal onClose={handleCloseModal}/>
+        )}
       </div>
       <SearchComponent/>
       <ContactComponent/>

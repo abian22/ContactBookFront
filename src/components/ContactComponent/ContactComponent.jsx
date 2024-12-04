@@ -1,12 +1,35 @@
 import profileIcon from "../../assets/profileIcon.svg";
 import cancelIcon from "../../assets/cancelIcon.svg";
 import editIcon from "../../assets/editIcon.svg";
+import EditContactModal from "../EditContactModal/EditContactModal";
+import DeleteContactModal from "../DeleteContactModal/DeleteContactModal";
+import { useState } from "react";
 
 function ContactComponent() {
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+
+  const handleEditOpenModal = () => {
+    setIsEditModalOpen(true);
+  };
+
+  const handleEdiClosetModal = () => {
+    setIsEditModalOpen(false);
+  };
+
+  const handleDeleteOpenModal = () => {
+    setIsDeleteModalOpen(true);
+  };
+
+  const handleDeleteCloseModal = () => {
+    setIsDeleteModalOpen(false);
+  };
   return (
     <div
       style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
     >
+      {isEditModalOpen && <EditContactModal onClose={handleEdiClosetModal} />}
+      {isDeleteModalOpen && <DeleteContactModal onClose={handleDeleteCloseModal}/>}
       <div
         style={{
           position: "relative",
@@ -28,6 +51,7 @@ function ContactComponent() {
             height: "20px",
             cursor: "pointer",
           }}
+          onClick={handleEditOpenModal}
         />
         <img
           src={cancelIcon}
@@ -40,6 +64,7 @@ function ContactComponent() {
             height: "20px",
             cursor: "pointer",
           }}
+          onClick={handleDeleteOpenModal}
         />
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           <img
