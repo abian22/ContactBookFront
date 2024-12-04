@@ -1,0 +1,28 @@
+.centerContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.searchInputContainer {
+    width: 200px;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    padding: 0 15px;
+    box-shadow: 0px 0px 8px #ddd;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .searchInput {
+    border: none;
+    font-size: 1rem;
+    width: 200px;
+    margin-left: 5px;
+  }
+
+  .searchInput:focus{
+    outline: none;
+  }
+  

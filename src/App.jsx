@@ -1,5 +1,6 @@
 import "./App.css";
 import ContactComponent from "./components/ContactComponent/ContactComponent";
+import SearchComponent from "./components/SearchComponent/SearchComponent";
 
 function App() {
   return (
@@ -25,8 +26,8 @@ function App() {
         >
           +
         </button>
-     
       </div>
+      <SearchComponent/>
       <ContactComponent/>
     </>
   );

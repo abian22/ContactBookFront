@@ -8,9 +8,9 @@ function ContactComponent() {
         <img src={profileIcon} alt="Profile Icon" style={{ width: "50px", height: "50px" }} />
         <div style={{ justifyContent:"center"}}>
           <p style={{ margin: 0, fontWeight: "bold", }}>Nombre: John</p>
-          <p style={{ margin: 0 }}>Apellidos: Doe</p>
           <p style={{ margin: 0 }}>Teléfono: +1 234 567 890</p>
           <p style={{ margin: 0 }}>Category: +1 234 567 890</p>
+          <p style={{ margin: 0 }}>Email: +1 234 567 890</p>
         </div>
       </div>
     </div>
