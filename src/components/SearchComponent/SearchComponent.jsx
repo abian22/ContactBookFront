@@ -1,15 +1,12 @@
-import "./SerachComponent.css"
+import "./SerachComponent.css";
 function SearchComponent() {
   return (
     <div className="centerContainer">
-    <div className="searchInputContainer">
-      <input
-        className="searchInput"
-
-      />
+      <div className="searchInputContainer">
+        <input className="searchInput" />
+      </div>
     </div>
-    </div>
-  )
+  );
 }
 
-export default SearchComponent
+export default SearchComponent;

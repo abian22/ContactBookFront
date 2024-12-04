@@ -3,84 +3,33 @@ import cancelIcon from "../../assets/cancelIcon.svg";
 import editIcon from "../../assets/editIcon.svg";
 import EditContactModal from "../EditContactModal/EditContactModal";
 import DeleteContactModal from "../DeleteContactModal/DeleteContactModal";
+import ContactDataComponent from "../ContactDataComponent/ContactDataComponent";
 import { useState } from "react";
+import "./ContactComponent.css"; 
 
-function ContactComponent() {
+function ContactComponent({name, category, email, number}) {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
-  const handleEditOpenModal = () => {
-    setIsEditModalOpen(true);
-  };
+  const handleEditOpenModal = () => setIsEditModalOpen(true);
+  const handleEditCloseModal = () => setIsEditModalOpen(false);
+  const handleDeleteOpenModal = () => setIsDeleteModalOpen(true);
+  const handleDeleteCloseModal = () => setIsDeleteModalOpen(false);
 
-  const handleEdiClosetModal = () => {
-    setIsEditModalOpen(false);
-  };
-
-  const handleDeleteOpenModal = () => {
-    setIsDeleteModalOpen(true);
-  };
-
-  const handleDeleteCloseModal = () => {
-    setIsDeleteModalOpen(false);
-  };
   return (
-    <div
-      style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
-    >
-      {isEditModalOpen && <EditContactModal onClose={handleEdiClosetModal} />}
-      {isDeleteModalOpen && <DeleteContactModal onClose={handleDeleteCloseModal}/>}
-      <div
-        style={{
-          position: "relative",
-          width: "400px",
-          padding: "20px",
-          borderRadius: "8px",
-          backgroundColor: "#f9f9f9",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-        }}
-      >
-        <img
-          src={editIcon}
-          alt="Edit Icon"
-          style={{
-            position: "absolute",
-            top: "10px",
-            right: "40px",
-            width: "20px",
-            height: "20px",
-            cursor: "pointer",
-          }}
-          onClick={handleEditOpenModal}
-        />
-        <img
-          src={cancelIcon}
-          alt="Cancel Icon"
-          style={{
-            position: "absolute",
-            top: "10px",
-            right: "10px",
-            width: "20px",
-            height: "20px",
-            cursor: "pointer",
-          }}
-          onClick={handleDeleteOpenModal}
-        />
-        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <img
-            src={profileIcon}
-            alt="Profile Icon"
-            style={{ width: "50px", height: "50px" }}
-          />
-          <div style={{ justifyContent: "center" }}>
-            <p style={{ margin: 0, fontWeight: "bold" }}>Nombre: John</p>
-            <p style={{ margin: 0 }}>Teléfono: +1 234 567 890</p>
-            <p style={{ margin: 0 }}>Category: Developer</p>
-            <p style={{ margin: 0 }}>Email: john@example.com</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <section className="contact-container">
+      {isEditModalOpen && <EditContactModal onClose={handleEditCloseModal} />}
+      {isDeleteModalOpen && <DeleteContactModal onClose={handleDeleteCloseModal} />}
+      <article className="contact-card">
+        <button className="icon-button edit-button" onClick={handleEditOpenModal}>
+          <img src={editIcon} alt="Edit contact" className="icon" />
+        </button>
+        <button className="icon-button delete-button" onClick={handleDeleteOpenModal}>
+          <img src={cancelIcon} alt="Delete contact" className="icon" />
+        </button>
+        <ContactDataComponent name={name}  category={category} email={email} number={number}/>
+      </article>
+    </section>
   );
 }
 

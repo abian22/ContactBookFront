@@ -1,12 +1,11 @@
-import React from 'react'
-
-function InputModal({ label, id, type = "text", name }) {
+import "./InputModal.css"
+function InputModal({ label, id,name }) {
   return (
     <div className="form-group">
       <label htmlFor={id} className="form-label">
         {label}
       </label>
-      <input type={type} id={id} name={name} className="form-input" />
+      <input type={"text"} id={id} name={name} className="form-input" />
     </div>
   )
 }

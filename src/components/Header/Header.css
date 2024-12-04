@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .header-title {
+    font-size: 30px;
+    margin: 0;
+  }
+  
+  .header-add-button {
+    padding: 5px 10px;
+    border-radius: 50%;
+    background-color: green;
+    color: white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+  }
+  
