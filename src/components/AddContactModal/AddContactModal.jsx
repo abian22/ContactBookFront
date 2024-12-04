@@ -1,135 +1,55 @@
-import React from "react";
+import "./AddContactModal.css";
 
 function AddContactModal({ onClose }) {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-        zIndex: "1",
-      }}
-    >
-      <div
-        style={{
-          width: "400px",
-          padding: "20px",
-          paddingRight: "40px",
-          borderRadius: "8px",
-          backgroundColor: "#fff",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-        }}
-      >
-        <h2 style={{ margin: "0 0 20px 0" }}>Add Contact</h2>
+    <div className="modal-overlay">
+      <div className="modal-content">
+        <h2 className="modal-title">Add Contact</h2>
         <form>
-          <div style={{ marginBottom: "15px" }}>
-            <label
-              htmlFor="nombre"
-              style={{ display: "block", marginBottom: "5px" }}
-            >
-              Nombre
+          <div className="form-group">
+            <label htmlFor="name" className="form-label">
+              Name
+            </label>
+            <input type="text" id="name" name="name" className="form-input" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="last-name" className="form-label">
+              Last name
             </label>
             <input
               type="text"
-              id="nombre"
-              name="nombre"
-              style={{
-                width: "100%",
-                padding: "8px",
-                borderRadius: "4px",
-                border: "1px solid #ccc",
-              }}
+              id="last-name"
+              name="last-name"
+              className="form-input"
             />
           </div>
-          <div style={{ marginBottom: "15px" }}>
-            <label
-              htmlFor="apellidos"
-              style={{ display: "block", marginBottom: "5px" }}
-            >
-              Apellidos
+          <div className="form-group">
+            <label htmlFor="number" className="form-label">
+              Number
             </label>
             <input
               type="text"
-              id="apellidos"
-              name="apellidos"
-              style={{
-                width: "100%",
-                padding: "8px",
-                borderRadius: "4px",
-                border: "1px solid #ccc",
-              }}
+              id="number"
+              name="number"
+              className="form-input"
             />
           </div>
-          <div style={{ marginBottom: "15px" }}>
-            <label
-              htmlFor="numero"
-              style={{ display: "block", marginBottom: "5px" }}
-            >
-              Número
-            </label>
-            <input
-              type="text"
-              id="numero"
-              name="numero"
-              style={{
-                width: "100%",
-                padding: "8px",
-                borderRadius: "4px",
-                border: "1px solid #ccc",
-              }}
-            />
-          </div>
-          <div style={{ marginBottom: "20px" }}>
-            <label
-              htmlFor="email"
-              style={{ display: "block", marginBottom: "5px" }}
-            >
+          <div className="form-group">
+            <label htmlFor="email" className="form-label">
               Email
             </label>
             <input
               type="email"
               id="email"
               name="email"
-              style={{
-                width: "100%",
-                padding: "8px",
-                borderRadius: "4px",
-                border: "1px solid #ccc",
-              }}
+              className="form-input"
             />
           </div>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <button
-              type="button"
-              style={{
-                padding: "10px 15px",
-                borderRadius: "4px",
-                backgroundColor: "#f5f5f5",
-                border: "1px solid #ccc",
-                cursor: "pointer",
-              }}
-              onClick={onClose}
-            >
+          <div className="form-actions">
+            <button type="button" className="btn btn-cancel" onClick={onClose}>
               Cancelar
             </button>
-            <button
-              type="submit"
-              style={{
-                padding: "10px 15px",
-                borderRadius: "4px",
-                backgroundColor: "#007bff",
-                color: "#fff",
-                border: "none",
-                cursor: "pointer",
-              }}
-            >
+            <button type="submit" className="btn btn-save">
               Save
             </button>
           </div>
