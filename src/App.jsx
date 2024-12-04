@@ -29,6 +29,8 @@ function App() {
       </div>
       <SearchComponent/>
       <ContactComponent/>
+      <ContactComponent/>
+      <ContactComponent/>
     </>
   );
 }
