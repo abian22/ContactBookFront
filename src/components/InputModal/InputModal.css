@@ -5,6 +5,7 @@
   .form-label {
     display: block;
     margin-bottom: 5px;
+    
   }
   
   .form-input {
@@ -12,4 +13,16 @@
     padding: 8px;
     border-radius: 4px;
     border: 1px solid #ccc;
+  }
+
+  .input-error-border {
+    border-color: red;
+  }
+  
+  .input-error-text {
+    color: red;
+  }
+  
+  .input-error-label {
+    color: red;
   }

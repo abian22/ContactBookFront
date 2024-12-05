@@ -22,5 +22,6 @@
   .contact-phone,
   .contact-category,
   .contact-email {
-    font-size: 14px;
+    font-size: 15px;
+    vertical-align: middle;
   }

@@ -3,7 +3,7 @@ function EditContactModal({ onClose }) {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <h2 className="modal-title">Add Contact</h2>
+        <h2 className="modal-title">Edit Contact</h2>
         <form>
           <InputModal label="Name" id="name" name="name" />
           <InputModal label="Last Name" id="last-name" name="last-name" />

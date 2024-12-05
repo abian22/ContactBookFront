@@ -3,7 +3,7 @@ import ContactComponent from "./components/ContactComponent/ContactComponent";
 import SearchComponent from "./components/SearchComponent/SearchComponent";
 import Header from "./components/Header/Header";
 import { useEffect, useState } from "react";
-import getContacts from "./services/contact";
+import {getContacts} from "./services/contact";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -11,7 +11,7 @@ function App() {
 
   useEffect(()=> {
     handleContactData()
-  }, [])
+  }, [contactData])
 
   const handleContactData = async() => {
     const result = await getContacts();

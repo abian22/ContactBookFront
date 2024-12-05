@@ -1,4 +1,6 @@
 import profileIcon from "../../assets/profileIcon.svg";
+import phoneIcon from "../../assets/phoneIcon.svg"
+import emailIcon from "../../assets/emailIcon.svg"
 import "./ContactDataComponent.css";
 
 function ContactDataComponent({ name, lastName, number, category, email }) {
@@ -7,17 +9,15 @@ function ContactDataComponent({ name, lastName, number, category, email }) {
       <img src={profileIcon} alt="Profile" className="profile-icon" />
       <div className="contact-details">
         <p className="contact-name">
-          <strong>Nombre:</strong> {name} {lastName}
+          <strong> {name} {lastName}</strong>{category ? ` - ${category}` : ""}
         </p>
         <p className="contact-phone">
-          <strong>Teléfono:</strong> {number}
+          <img src={phoneIcon}/> {number}
         </p>
-        <p className="contact-category">
-          <strong>Categoría:</strong> {category}
-        </p>
+        {email &&(
         <p className="contact-email">
-          <strong>Email:</strong> {email}
-        </p>
+        <img src={emailIcon}/> {email}
+        </p>)}
       </div>
     </div>
   );

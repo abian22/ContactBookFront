@@ -1,6 +1,6 @@
 import api from "./serviceConfig";
 
-async function getContacts() {
+export async function getContacts() {
   try {
     const result = await api.get("/user");
     return result.data;
@@ -9,4 +9,13 @@ async function getContacts() {
   }
 }
 
-export default getContacts;
+export async function createContact(data) {
+    try{
+        const result = await api.post("/user", data)
+        return result.data
+    } catch (error) {
+        console.error("Error with adding a contact", error)
+    }
+}
+
+
