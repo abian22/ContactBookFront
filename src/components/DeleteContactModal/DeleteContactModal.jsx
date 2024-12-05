@@ -1,5 +1,11 @@
 import "./DeleteContactModal.css"
-function DeleteContactModal({ onClose }) {
+import { deleteContact } from "../../services/contact";
+
+function DeleteContactModal({ onClose, id }) {
+
+  const handleDeleteContact = async () => {
+    await deleteContact(id)
+  }
     return (
       <div className="modal-overlay">
         <div className="delete-modal-content">
@@ -11,7 +17,7 @@ function DeleteContactModal({ onClose }) {
             <button className="btn btn-cancel" onClick={onClose}>
               Cancel
             </button>
-            <button className="btn btn-delete">
+            <button className="btn btn-delete" onClick={handleDeleteContact}>
               Delete
             </button>
           </div>

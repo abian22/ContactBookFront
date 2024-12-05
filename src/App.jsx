@@ -38,7 +38,7 @@ function App() {
       </div>
       <SearchComponent/>
       {contactData.map((d) =>(
-        <ContactComponent key={d.userId} name={d.name} lastName={d.lastName} number={d.phoneNumber} category={d.category} email={d.email}/>
+        <ContactComponent key={d.userId} id={d.userId} name={d.name} lastName={d.lastName} number={d.phoneNumber} category={d.category} email={d.email}/>
       ))}
     </>
   );

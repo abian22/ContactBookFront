@@ -5,9 +5,9 @@ import EditContactModal from "../EditContactModal/EditContactModal";
 import DeleteContactModal from "../DeleteContactModal/DeleteContactModal";
 import ContactDataComponent from "../ContactDataComponent/ContactDataComponent";
 import { useState } from "react";
-import "./ContactComponent.css"; 
+import "./ContactComponent.css";
 
-function ContactComponent({name, lastName, category, email, number}) {
+function ContactComponent({ id, name, lastName, category, email, number }) {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
@@ -19,15 +19,29 @@ function ContactComponent({name, lastName, category, email, number}) {
   return (
     <section className="contact-container">
       {isEditModalOpen && <EditContactModal onClose={handleEditCloseModal} />}
-      {isDeleteModalOpen && <DeleteContactModal onClose={handleDeleteCloseModal} />}
+      {isDeleteModalOpen && (
+        <DeleteContactModal onClose={handleDeleteCloseModal} id={id} />
+      )}
       <article className="contact-card">
-        <button className="icon-button edit-button" onClick={handleEditOpenModal}>
+        <button
+          className="icon-button edit-button"
+          onClick={handleEditOpenModal}
+        >
           <img src={editIcon} alt="Edit contact" className="icon" />
         </button>
-        <button className="icon-button delete-button" onClick={handleDeleteOpenModal}>
+        <button
+          className="icon-button delete-button"
+          onClick={handleDeleteOpenModal}
+        >
           <img src={cancelIcon} alt="Delete contact" className="icon" />
         </button>
-        <ContactDataComponent name={name}  lastName={lastName} category={category} email={email} number={number}/>
+        <ContactDataComponent
+          name={name}
+          lastName={lastName}
+          category={category}
+          email={email}
+          number={number}
+        />
       </article>
     </section>
   );

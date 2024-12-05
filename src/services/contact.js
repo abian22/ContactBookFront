@@ -18,4 +18,13 @@ export async function createContact(data) {
     }
 }
 
+export async function deleteContact(id){
+    try{
+        const result = await api.delete(`/user/${id}`, id)
+        return result.data
+    } catch (error) {
+        console.error("Error deleting a contact", error)
+    }
+}
+
 
