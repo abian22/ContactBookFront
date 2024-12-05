@@ -7,7 +7,7 @@ import ContactDataComponent from "../ContactDataComponent/ContactDataComponent";
 import { useState } from "react";
 import "./ContactComponent.css"; 
 
-function ContactComponent({name, category, email, number}) {
+function ContactComponent({name, lastName, category, email, number}) {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
 
@@ -27,7 +27,7 @@ function ContactComponent({name, category, email, number}) {
         <button className="icon-button delete-button" onClick={handleDeleteOpenModal}>
           <img src={cancelIcon} alt="Delete contact" className="icon" />
         </button>
-        <ContactDataComponent name={name}  category={category} email={email} number={number}/>
+        <ContactDataComponent name={name}  lastName={lastName} category={category} email={email} number={number}/>
       </article>
     </section>
   );

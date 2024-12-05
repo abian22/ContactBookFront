@@ -2,11 +2,22 @@ import "./App.css";
 import ContactComponent from "./components/ContactComponent/ContactComponent";
 import SearchComponent from "./components/SearchComponent/SearchComponent";
 import Header from "./components/Header/Header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import getContacts from "./services/contact";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [contactData, setContactData] = useState([])
 
+  useEffect(()=> {
+    handleContactData()
+  }, [])
+
+  const handleContactData = async() => {
+    const result = await getContacts();
+    setContactData(result)
+  }
+ 
   const handleOpenModal = () => {
     setIsModalOpen(true);
   };
@@ -14,6 +25,8 @@ function App() {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
+
+  console.log(contactData)
   return (
     <>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "10px" }}>
@@ -24,9 +37,9 @@ function App() {
       />
       </div>
       <SearchComponent/>
-      <ContactComponent name="John" number={1234567890} category="developer" email="john@example.com"/>
-      <ContactComponent name="John" number={1234567890} category="developer" email="john@example.com"/>
-      <ContactComponent name="John" number={1234567890} category="developer" email="john@example.com"/>
+      {contactData.map((d) =>(
+        <ContactComponent key={d.userId} name={d.name} lastName={d.lastName} number={d.phoneNumber} category={d.category} email={d.email}/>
+      ))}
     </>
   );
 }
