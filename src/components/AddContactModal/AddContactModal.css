@@ -34,11 +34,20 @@
   
   .btn-cancel {
     background-color: #f5f5f5;
-    border: 1px solid #ccc;
+  }
+
+  .btn-cancel:hover {
+    background-color: #fffcfc;
+
   }
   
   .btn-save {
     background-color: #007bff;
+    color: #fff;
+    border: none;
+  }
+  .btn-save:hover {
+    background-color: #00a2ff;
     color: #fff;
     border: none;
   }

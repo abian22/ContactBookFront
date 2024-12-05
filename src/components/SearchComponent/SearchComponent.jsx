@@ -3,7 +3,7 @@ function SearchComponent() {
   return (
     <div className="centerContainer">
       <div className="searchInputContainer">
-        <input className="searchInput" />
+        <input className="searchInput" placeholder="Search contact"/>
       </div>
     </div>
   );

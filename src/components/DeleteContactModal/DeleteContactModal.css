@@ -44,4 +44,9 @@
     color: #fff;
     border: none;
   }
+  .btn-delete:hover {
+    background-color: #f72a3e;
+    color: #fff;
+    border: none;
+  }
   
