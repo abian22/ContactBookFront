@@ -27,4 +27,20 @@ export async function deleteContact(id){
     }
 }
 
+export async function updateContact(id, name, lastName, category, email, number) {
+    try {
+      const result = await api.put(`/user/${id}`, {
+        id,
+        name,
+        lastName,
+        category,
+        email,
+        number,
+      });
+        return result.data
+    } catch(error) {
+        console.error("Error updating a contact", error)
+    }
+}
+
 

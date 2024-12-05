@@ -18,7 +18,17 @@ function ContactComponent({ id, name, lastName, category, email, number }) {
 
   return (
     <section className="contact-container">
-      {isEditModalOpen && <EditContactModal onClose={handleEditCloseModal} />}
+      {isEditModalOpen && (
+        <EditContactModal
+          id={id}
+          name={name}
+          lastName={lastName}
+          category={category}
+          email={email}
+          number={number}
+          onClose={handleEditCloseModal}
+        />
+      )}
       {isDeleteModalOpen && (
         <DeleteContactModal onClose={handleDeleteCloseModal} id={id} />
       )}
