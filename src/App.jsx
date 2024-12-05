@@ -4,11 +4,13 @@ import SearchComponent from "./components/SearchComponent/SearchComponent";
 import Header from "./components/Header/Header";
 import { useEffect, useState } from "react";
 import { getContacts } from "./services/contact";
+import FilterCategoryComponent from "./components/FilterCategoryComponent/FilterCategoryComponent";
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [contactData, setContactData] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [categoryFilter, setCategoryFilter] = useState("");
 
   useEffect(() => {
     handleContactData();
@@ -23,9 +25,16 @@ function App() {
 
   const handleCloseModal = () => setIsModalOpen(false);
 
-  const filteredContacts = contactData.filter((contact) =>
-    contact.name.toLowerCase().includes(searchText.toLowerCase())
-  );
+  const filteredContacts = contactData.filter((contact) => {
+    const matchesName = contact.name
+      .toLowerCase()
+      .includes(searchText.toLowerCase());
+    const matchesCategory = categoryFilter
+      ? contact.category.toLowerCase() === categoryFilter.toLowerCase()
+      : true;
+
+    return matchesName && matchesCategory;
+  });
 
   return (
     <>
@@ -44,6 +53,10 @@ function App() {
         />
       </div>
       <SearchComponent searchText={searchText} setSearchText={setSearchText} />{" "}
+      <FilterCategoryComponent
+        categoryFilter={categoryFilter}
+        setCategoryFilter={setCategoryFilter}
+      />
       {filteredContacts.map((d) => (
         <ContactComponent
           key={d.userId}

@@ -97,6 +97,7 @@ function EditContactModal({
           />
           <InputModal
             label="Category"
+            name="category"
             value={updatedCategory}
             onChange={(e) => setUpdatedCategory(e.target.value)}
           />

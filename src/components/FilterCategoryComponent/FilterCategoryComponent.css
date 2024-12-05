@@ -1,0 +1,16 @@
+.filter-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+  }
+  
+  .filter-label {
+    font-weight: bold;
+    padding: 3px;
+  }
+  
+  .filter-select {
+    width: auto;
+    padding: 4px;
+    border-radius: 4px;
+  }
