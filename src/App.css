@@ -2,6 +2,13 @@ body{
     background-color: lightblue;
 }
 
+.header-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
 .pagination {
     display: flex;
     list-style-type: none;

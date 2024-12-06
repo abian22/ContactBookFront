@@ -12,7 +12,6 @@ function AddContactModal({ onClose }) {
   const [nameError, setNameError] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
 
-
   const handleAddContact = async (e) => {
     e.preventDefault();
 
@@ -64,7 +63,7 @@ function AddContactModal({ onClose }) {
             label="Name *"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className={nameError ? "input-error-border" : ""} 
+            className={nameError ? "input-error-border" : ""}
             labelClassName={nameError ? "input-error-label" : ""}
           />
           <InputModal
@@ -77,7 +76,7 @@ function AddContactModal({ onClose }) {
             type="tel"
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
-            className={phoneError ? "input-error-border" : ""} 
+            className={phoneError ? "input-error-border" : ""}
             labelClassName={phoneError ? "input-error-label" : ""}
             pattern="^[0-9]{9,11}$"
             title="Phone number must be between 9 and 11 digits"

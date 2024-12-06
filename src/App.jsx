@@ -30,7 +30,8 @@ function App() {
 
   const indexOfLastContact = currentPage * contactsPerPage; // Calculate the index of the last contact on the current page
   const indexOfFirstContact = indexOfLastContact - contactsPerPage; // Calculate the index of the first contact on the current page
-  const currentContacts = filteredContacts.slice( // Slice the filteredContacts array to get only the contacts for the current page
+  const currentContacts = filteredContacts.slice(
+    // Slice the filteredContacts array to get only the contacts for the current page
     indexOfFirstContact,
     indexOfLastContact
   );
@@ -54,14 +55,7 @@ function App() {
 
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "10px",
-        }}
-      >
+      <div className="header-center">
         <Header
           isModalOpen={isModalOpen}
           handleOpenModal={handleOpenModal}
