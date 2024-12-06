@@ -1,6 +1,6 @@
 import InputModal from "../InputModal/InputModal";
 import { createContact } from "../../services/contact";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./AddContactModal.css";
 
 function AddContactModal({ onClose }) {
@@ -12,7 +12,8 @@ function AddContactModal({ onClose }) {
   const [nameError, setNameError] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
 
-  const handleSubmit = async (e) => {
+
+  const handleAddContact = async (e) => {
     e.preventDefault();
 
     // Name validation
@@ -96,7 +97,7 @@ function AddContactModal({ onClose }) {
             <button type="button" className="btn btn-cancel" onClick={onClose}>
               Cancelar
             </button>
-            <button className="btn btn-save" onClick={handleSubmit}>
+            <button className="btn btn-save" onClick={handleAddContact}>
               Save
             </button>
           </div>

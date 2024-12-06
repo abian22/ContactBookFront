@@ -1,3 +1,18 @@
 body{
     background-color: lightblue;
 }
+
+.pagination {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+  }
+  
+  .pagination li {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .pagination .active {
+    font-weight: bold;
+  }

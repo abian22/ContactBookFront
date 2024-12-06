@@ -13,7 +13,7 @@ function FilterCategoryComponent({categoryFilter, setCategoryFilter}) {
     <option value="">All Categories</option>
     <option value="Work">Work</option>
     <option value="Family">Family</option>
-    <option value="Friends">Friends</option>
+    <option value="Friend">Friend</option>
     <option value="Other">Other</option>
   </select>
 </div>

@@ -21,7 +21,7 @@ function EditContactModal({
   const handleEditContact = async (e) => {
     e.preventDefault();
 
-    // Validating fields
+    // Validating name and phone number fields
     let hasError = false;
 
     // Same validation as AddContactComponent
