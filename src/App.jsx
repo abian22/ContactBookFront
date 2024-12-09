@@ -63,7 +63,7 @@ function App() {
         />
       </div>
       <SearchComponent searchText={searchText} setSearchText={setSearchText} />{" "}
-      <FilterCategoryComponent categoryFilter={categoryFilter} />
+      <FilterCategoryComponent categoryFilter={categoryFilter}  setCategoryFilter={setCategoryFilter}/>
       {currentContacts.map((d) => (
         <ContactComponent
           key={d.userId}
