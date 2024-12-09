@@ -1,5 +1,7 @@
-body{
-    background-color: lightblue;
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f4f5f7;
+  color: #333333;
 }
 
 .header-center {
@@ -10,16 +12,16 @@ body{
 }
 
 .pagination {
-    display: flex;
-    list-style-type: none;
-    justify-content: center;
-  }
-  
-  .pagination li {
-    margin: 0 5px;
-    cursor: pointer;
-  }
-  
-  .pagination .active {
-    font-weight: bold;
-  }
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+}
+
+.pagination li {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination .active {
+  font-weight: bold;
+}

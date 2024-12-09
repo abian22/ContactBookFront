@@ -1,6 +1,8 @@
 import InputModal from "../InputModal/InputModal";
 import { useState } from "react";
 import { updateContact } from "../../services/contact";
+import "../AddContactModal/AddContactModal.css"
+
 function EditContactModal({
   onClose,
   id,
